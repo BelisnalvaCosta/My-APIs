@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-image: url('/frontend/src/images/natureza.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    color: #c0f5f5;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #3c5cc6;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: aquamarine;
+}
+
+.content {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.container {
+    background: rgba(224, 47, 47, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    width: 350px;
+}
+
+header {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-field {
+    margin-bottom: 10px;
+}
+
+.input-field label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+}
+
+.submit {
+    width: 100%;
+    padding: 10px;
+    background: aquamarine;
+    border: 2px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #141212;
+}
+
+.submit:hover {
+    background: #6fa1d7;
+    color: #000;
+}

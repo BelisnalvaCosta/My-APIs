@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>Farmácia - Controle de Estoque</title>
+    <link rel="stylesheet" href="styles/estoque.css">
+</head>
+<body>
+    <header>
+        <h1>Controle de Estoque</h1>
+        <p>Gerencie as entradas e saídas de medicamentos.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="register.html">Login</a></li>            
+            <li><a href="geren-farm.html">Gerenciamento</a></li>
+            <li><a href="cadastro.html">Cadastro</a></li>
+            <li><a href="central_medicamentos.html">Central de Medicamentos</a></li>
+            <li><a href="gerenciamento-produto.html">Gerenciamento Produto</a></li>
+        </ul>
+    </nav>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Imagens de Medicamentos</title>
+        <style>
+            /* Estilos básicos para o carrossel */
+            .carrossel {
+                display: flex;
+                overflow: hidden;
+                width: 300px;
+                margin: 0 auto;
+                position: relative;
+            }
+    
+            .carrossel-img {
+                display: flex;
+                width: 100%;
+                transition: transform 0.4s ease-in-out;
+            }
+    
+            .imagem-container {
+                min-width: 100%;
+                text-align: center;
+            }
+    
+            .imagem-container img {
+                width: 200px;
+                height: 200px;
+            }
+    
+            .imagem-container h3, .imagem-container p {
+                margin: 5px 0;
+            }
+    
+            /* Botões de navegação */
+            .navegacao {
+                position: absolute;
+                top: 50%;
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                transform: translateY(-50%);
+            }
+    
+            .navegacao button {
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                border: none;
+                padding: 10px;
+                cursor: pointer;
+            }
+
+            /* Rodapé */
+            footer {
+                text-align: center;
+                background: #00509E;
+                color: #fff;
+                padding: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Produtos Farmacêuticos</h1>        
+        <div class="carrossel">
+            <div class="carrossel-img">
+                <!-- Imagens e informações dos medicamentos -->
+                <div class="imagem-container" data-produto="amoxilina">
+                <img src="./src/images/amoxilina.png" alt="amoxilina">                
+                    <h3>Amoxicilina</h3>
+                    <p>Prescrição: Sim</p>
+                    <p>Estoque: 40 unidades</p>
+                    <p>Preço: R$ 12,00</p>
+                </div>
+                <div class="imagem-container" data-produto="cimegripe">
+                    <img src="./src/images/cimegripe.png" alt="cimegripe">                    
+                    <h3>Cimegripe</h3>
+                    <p>Prescrição: Não</p>
+                    <p>Estoque: 60 unidades</p>
+                    <p>Preço: R$ 8,50</p>
+                </div>
+                <div class="imagem-container" data-produto="dorflex"> 
+                    <img src="./src/images/dorflex.png" alt="dorflex">               
+                    <h3>Dorflex</h3>
+                    <p>Prescrição: Não</p>
+                    <p>Estoque: 50 unidades</p>
+                    <p>Preço: R$ 10,00</p>
+                </div>
+                <div class="imagem-container" data-produto="dipirona">
+                    <img src="./src/images/dipirona.png" alt="dipirona">               
+                    <h3>Dipirona</h3>
+                    <p>Prescrição: Não</p>
+                    <p>Estoque: 80 unidades</p>
+                    <p>Preço: R$ 5,00</p>
+                </div>
+                <div class="imagem-container" data-produto="luftal">
+                    <img src="./src/images/luftal.png" alt="luftal">
+                    <h3>Luftal</h3>
+                    <p>Prescrição: Não</p>
+                    <p>Estoque: 35 unidades</p>
+                    <p>Preço: R$ 7,00</p>
+                </div>
+            </div>
+    
+            <!-- Botões de navegação do carrossel -->
+            <div class="navegacao">
+                <button onclick="navegarCarrossel(-1)">&#10094;</button>
+                <button onclick="navegarCarrossel(1)">&#10095;</button>
+            </div>
+        </div>
+    
+        <script>
+            let indiceAtual = 0;
+    
+            function navegarCarrossel(direcao) {
+                const carrossel = document.querySelector('.carrossel-img');
+                const totalImagens = carrossel.children.length;
+    
+                // Atualiza o índice
+                indiceAtual = (indiceAtual + direcao + totalImagens) % totalImagens;
+    
+                // Move o carrossel para a próxima imagem
+                carrossel.style.transform = `translateX(-${indiceAtual * 100}%)`;
+            }
+    
+            // Carrossel automático com intervalo de 3 segundos
+            setInterval(() => navegarCarrossel(1), 3000);
+        </script><br>
+        <div class="carrossel">
+            <div class="slide">Medicamento 1: Disponível</div>
+            <div class="slide">Medicamento 2: Faltoso</div>
+            <div class="slide">Medicamento 3: Estoque Crítico</div>
+          </div>
+          
+          <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.slide');
+          
+            function showSlide(index) {
+              slides.forEach((slide, i) => {
+                slide.style.display = i === index ? 'block' : 'none';
+              });
+            }
+          
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % slides.length;
+              showSlide(currentSlide);
+            }
+          
+            setInterval(nextSlide, 3000);
+            showSlide(currentSlide);
+          </script>
+          <script src="img-index.html"></script>        
+
+        <main>
+        <section id="carrossel">
+            <img src="./src/images/amoxilina.png" width="100" height="140" alt="Medicamento 1">
+            <img src="./src/images/dipirona.png" width="100" height="140" alt="Medicamento 2">
+            <img src="./src/images/luftal.png" width="100" height="140" alt="Medicamento 3">
+            <img src="./src/images/cimegripe.png" width="100" height="140" alt="Medicamento 4">
+        </section>
+
+        <section id="fontes">
+            <h3>Fontes:</h3>
+            <ul>
+                <li><a href="https://belisnalvacosta.github/" target="_blank">Projeto- Github</a></li>
+                <li><a href="https://chatgpt.com/" target="_blank">ChatGPT - pesquisa avançada</a></li>          
+            </ul>
+        </section>
+        </main>
+          
+        <footer>
+            <p>&copy; 2025 - Belisnalva Costa</p>
+            <a href="https://belisnalvacosta.github.io/New-farm" target="_blank" alt="github">GitHub</a>
+        </footer>        
+</body>
+</html>
