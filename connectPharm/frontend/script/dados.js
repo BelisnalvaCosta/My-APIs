@@ -1,3 +1,4 @@
+/*
 let produtosFarmaceuticos = [
     { nome: "Paracetamol", prescricao_medica: "Não", qtde_entrada: 100, qtde_saida: 25, qtde_estoque: 75, preco: 5.00, localidade_farmacia: "Farmácia Central" },
     { nome: "Amoxicilina", prescricao_medica: "Sim", qtde_entrada: 50, qtde_saida: 10, qtde_estoque: 40, preco: 12.00, localidade_farmacia: "Farmácia Zona Norte" },
@@ -121,3 +122,4 @@ document.getElementById('btnAtualizar').addEventListener('click', atualizarProdu
 
 // Inicializar a tabela ao carregar a página
 window.onload = preencherTabela;
+*/
