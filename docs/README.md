@@ -97,7 +97,7 @@ INSERT INTO medicamentos (nome, prescricao, entrada, saida, estoque, preco, farm
 ### **2. Configuração do Frontend**
 1. Clone este repositório:
 ```bash
-git clone https://github.com/seu-usuario/farmacia-digital.git
+git clone https://github.com/BelisnalvaCosta/My-APIs.git
 ```
 
 2. Substitua as credenciais do Supabase no arquivo `script.js`:
