@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farmácia Digital</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 Busca de Medicamentos</h1>
+        
+        <input type="text" id="busca" placeholder="Pesquise por nome ou farmácia..." autofocus>
+        
+        <div class="tabela-container">
+            <table id="tabelaMedicamentos">
+                <thead>
+                    <tr>
+                        <th>Medicamento</th>
+                        <th>Receita?</th>
+                        <th>Estoque</th>
+                        <th>Preço</th>
+                        <th>Localização</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabela">
+                    <tr><td colspan="5">Carregando...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
